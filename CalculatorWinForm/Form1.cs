@@ -23,8 +23,33 @@ namespace CalculatorWinForm
             {
                 double bil1 = Convert.ToDouble(inputBilPertama.Text);
                 double bil2 = Convert.ToDouble(inputBilKedua.Text);
+                string op = cmbOperator.SelectedItem.ToString();
 
-                double hasil = bil1 + bil2;
+                double hasil = 0;
+
+                switch (op)
+                {
+                    case "+":
+                        hasil = bil1 + bil2;
+                        break;
+                    case "-":
+                        hasil = bil1 - bil2;
+                        break;
+                    case "*":
+                        hasil = bil1 * bil2;
+                        break;
+                    case "/":
+                        if (bil2 == 0)
+                        {
+                            MessageBox.Show("Pembagi tidak boleh nol!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
+                        }
+                        hasil = bil1 / bil2;
+                        break;
+                    default:
+                        MessageBox.Show("Operator tidak valid!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                }
 
                 panelHasil.Controls.Clear();
 
@@ -45,6 +70,20 @@ namespace CalculatorWinForm
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cmbOperator.Items.Add("+");
+            cmbOperator.Items.Add("-");
+            cmbOperator.Items.Add("*");
+            cmbOperator.Items.Add("/");
+            cmbOperator.SelectedIndex = 0;
         }
     }
 }
