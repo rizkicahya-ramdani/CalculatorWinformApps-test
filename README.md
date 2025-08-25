@@ -22,6 +22,6 @@ User dapat memasukkan dua bilangan, memilih operator (`+`, `-`, `*`, `/`), lalu 
 ## 🚀 Cara Menjalankan
 1. Clone atau download project ini  
    ```sh
-   git clone https://github.com/rizkicahya-ramdani/CalculatorWinformApps-test.git
+   git clone https://github.com/rizkicahyaa/CalculatorWinformApps-test.git
 2. Buka project di Visual Studio
 3. Tekan F5 untuk menjalankan
